@@ -22,13 +22,19 @@ def signup(request):
 
 def login(request):
     if request.method=='POST':
-        user=User.objects.get(username=request.POST['username'])
+        user=auth.authenticate(username=request.POST['username'],password=request.POST['password'])
         if user is not None:
             auth.login(request,user)
             return redirect('home')
         else:
             return redirect('login')
     return render(request,'accounts/login.html')
+
+
+def logout(request):
+    if request.user:
+        auth.logout(request)
+    return redirect('login')
 
 @login_required(login_url='login')
 def home(request):
