@@ -1,0 +1,35 @@
+html{
+    font-size: 62.5%;
+}
+
+*,*:link,*:visited{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    box-sizing: inherit;
+    background-color: rgb(20, 20, 20);
+    font-family: 'Poiret One', cursive;
+    letter-spacing: 3px;
+    font-weight: 500;
+}
+
+a{
+    text-decoration: none;
+}
+
+li{
+    list-style: none;
+}
+
+::-moz-selection{
+    color: #ffffff;
+    background: rgb(0, 0, 0);
+}
+
+::selection{
+    color: #ffffff;
+    background: rgb(0, 0, 0);
+}

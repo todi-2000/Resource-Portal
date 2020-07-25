@@ -1,0 +1,30 @@
+// font-family: 'Marck Script', cursive;
+// font-family: 'Poiret One', cursive;
+
+.heading-primary {
+  margin-top: 3.5rem;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 3px;
+  font-family: "Poiret One", cursive;
+
+  @media only screen and (max-width: 37.25em) {
+    font-size: 2rem;
+  }
+}
+
+.heading-first {
+  font-size: 6rem;
+  font-family: 'Allura', cursive;
+}
+
+.link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}

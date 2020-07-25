@@ -1,0 +1,165 @@
+.base{
+    width: 80vw;
+    position: absolute;
+    top: 47%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 4px;
+
+    background-color: #ffffff0e;
+    box-shadow: 0 3px 1rem #000000;
+
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+}
+
+.base, .hero{
+    max-height: 45rem;
+    min-height: 45rem;
+}
+
+.hero{
+    background-image: url(/img/student-bg.jpg);
+    clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+    background-size: cover;
+}
+
+@media only screen and (max-width:56.25em){
+    .hero{
+        display: none;
+    }
+    .base{
+        width: 90vw;
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+}
+
+.body{
+    font-size: 1.8rem;
+    padding: 1.2rem 4rem;
+    color: #fff;
+    width: max-content;
+
+    &-email, &-password{
+        
+        & > *{
+            margin: 1rem 0;
+        }
+    }
+
+    &-login{
+        display: flex;
+        justify-content: center;
+
+        &-teacher{
+            z-index: 2;
+        }
+    }
+}
+
+@media only screen and (max-width:56.25em){
+    .body{
+        margin: 0 auto;
+    }
+}
+
+input{
+    background-color: rgb(66, 66, 66);
+    font-family: 'Poiret One', cursive;
+    color: #fff;
+    border: none;
+    height: 3.5rem;
+    width: 35vw;
+    padding: 3px 6px;
+    border-radius: .8rem;
+    letter-spacing: 2px;
+    @media only screen and (max-width:56.25em){
+        &{
+            width: 25rem;
+        }
+    }
+    @media only screen and (max-width:25em){
+        &{
+            width: 20rem;
+        }
+    }
+
+    &::placeholder{
+        color: #fff;
+        letter-spacing: 2px;
+
+        @media only screen and (max-width:40em){
+            &{
+                letter-spacing: 2px;
+            }
+        }
+    }
+
+    &:focus{
+        outline: none;
+        background-color: rgb(95, 95, 95);
+        letter-spacing: 2px;
+    }
+
+    &[type='password']{
+        padding: 3px 3.5rem 3px 6px;
+    }
+
+    &[type='submit']{
+        color: #fff;
+        width: 15rem;
+        margin: 2rem auto;
+        background-color: #ec3f00;
+        cursor: pointer;
+        transition: background-color .2s;
+
+        &:hover{
+            background-color: #ff5214;
+        }
+    }
+}
+
+.foot{
+    font-size: 2rem;
+    color: #fff;
+    padding: 1.2rem 4rem;
+    width: 100%;
+
+    @media only screen and (max-width:56.25em){
+        &{
+            font-size: 1.5rem;
+            text-align: center;
+        }
+    }
+    &-var{
+        color: #ec3f00;
+        border-bottom: 1px solid #ec3f00;
+        cursor: pointer;
+        font-weight: 600;
+
+        transition: color .2s;
+
+        &:hover{
+            color: #ff632a;
+        }
+    }
+
+}
+
+.login-teacher{
+    display: none;
+}
+.shift-teacher, .shift-student{
+    transform: translateX( -3.2rem);
+    font-size: 1.4rem;
+    max-height: 1.8rem;
+    cursor: pointer;
+
+    @media only screen and (max-width:56.25em){
+        &{
+            transform: translateX( -2.7rem);
+        }
+    }
+}
+

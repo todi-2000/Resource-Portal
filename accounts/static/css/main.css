@@ -1,0 +1,240 @@
+.heading-primary {
+  margin-top: 3.5rem;
+  text-align: center;
+  font-size: 3rem;
+  color: #fff;
+  letter-spacing: 3px;
+  font-family: "Poiret One", cursive;
+}
+@media only screen and (max-width: 37.25em) {
+  .heading-primary {
+    font-size: 2rem;
+  }
+}
+
+.heading-first {
+  font-size: 6rem;
+  font-family: "Allura", cursive;
+}
+
+.link {
+  color: #fff;
+  font-size: 1.2rem;
+  text-decoration: none;
+}
+.link:hover {
+  text-decoration: underline;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+*,
+*:link,
+*:visited {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  box-sizing: inherit;
+  background-color: #141414;
+  font-family: "Poiret One", cursive;
+  letter-spacing: 3px;
+  font-weight: 500;
+}
+
+a {
+  text-decoration: none;
+}
+
+li {
+  list-style: none;
+}
+
+::-moz-selection {
+  color: #ffffff;
+  background: black;
+}
+
+::selection {
+  color: #ffffff;
+  background: black;
+}
+
+.help {
+  box-shadow: 0 3px 1rem #000000;
+  background-color: #ffffff0e;
+  position: fixed;
+  bottom: 2rem;
+  right: 2.5rem;
+  width: min-content;
+  z-index: 2;
+  padding: 1rem 1.2rem;
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 1px 3rem #000000de;
+  transition: all 0.2s;
+}
+.help-icon {
+  color: #fff;
+  font-size: 2.5rem;
+}
+.help:hover {
+  transform: scale(1.15);
+  background-image: linear-gradient(#ec3f00, #ff4400);
+  box-shadow: 0 3px 1rem #000000ce;
+}
+
+.base {
+  width: 80vw;
+  position: absolute;
+  top: 47%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  background-color: #ffffff0e;
+  box-shadow: 0 3px 1rem #000000;
+  display: grid;
+  grid-template-columns: 2fr 3fr;
+}
+
+.base,
+.hero {
+  max-height: 45rem;
+  min-height: 45rem;
+}
+
+.hero {
+  background-image: url(../img/student-bg.jpg);
+  clip-path: polygon(0 0, 100% 0, 75% 100%, 0% 100%);
+  background-size: cover;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .hero {
+    display: none;
+  }
+  .base {
+    width: 90vw;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+}
+
+.body {
+  font-size: 1.8rem;
+  padding: 1.2rem 4rem;
+  color: #fff;
+  width: max-content;
+}
+.body-email > *,
+.body-password > * {
+  margin: 1rem 0;
+}
+.body-login {
+  display: flex;
+  justify-content: center;
+}
+.body-login-teacher {
+  z-index: 2;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .body {
+    margin: 0 auto;
+  }
+}
+
+input {
+  background-color: #424242;
+  font-family: "Poiret One", cursive;
+  color: #fff;
+  border: none;
+  height: 3.5rem;
+  width: 35vw;
+  padding: 3px 6px;
+  border-radius: 0.8rem;
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 56.25em) {
+  input {
+    width: 25rem;
+  }
+}
+@media only screen and (max-width: 25em) {
+  input {
+    width: 20rem;
+  }
+}
+input::placeholder {
+  color: #fff;
+  letter-spacing: 2px;
+}
+@media only screen and (max-width: 40em) {
+  input::placeholder {
+    letter-spacing: 2px;
+  }
+}
+input:focus {
+  outline: none;
+  background-color: #5f5f5f;
+  letter-spacing: 2px;
+}
+input[type="password"] {
+  padding: 3px 3.5rem 3px 6px;
+}
+input[type="submit"] {
+  color: #fff;
+  width: 15rem;
+  margin: 2rem auto;
+  background-color: #ec3f00;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+input[type="submit"]:hover {
+  background-color: #ff5214;
+}
+
+.foot {
+  font-size: 2rem;
+  color: #fff;
+  padding: 1.2rem 4rem;
+  width: 100%;
+}
+@media only screen and (max-width: 56.25em) {
+  .foot {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+}
+.foot-var {
+  color: #ec3f00;
+  border-bottom: 1px solid #ec3f00;
+  cursor: pointer;
+  font-weight: 600;
+  transition: color 0.2s;
+}
+.foot-var:hover {
+  color: #ff632a;
+}
+
+.login-teacher {
+  display: none;
+}
+
+.shift-teacher,
+.shift-student {
+  transform: translateX(-3.2rem);
+  font-size: 1.4rem;
+  max-height: 1.8rem;
+  cursor: pointer;
+}
+@media only screen and (max-width: 56.25em) {
+  .shift-teacher,
+  .shift-student {
+    transform: translateX(-2.7rem);
+  }
+}

@@ -1,0 +1,27 @@
+.help{
+    box-shadow: 0 3px 1rem #000000;
+    background-color: #ffffff0e;
+    position: fixed;
+    bottom: 2rem;
+    right: 2.5rem;
+
+    width: min-content;
+    z-index: 2;
+    padding: 1rem 1.2rem;
+    border-radius: 50%;
+    cursor: pointer;
+    box-shadow: 0 1px 3rem #000000de;
+
+    transition: all .2s;
+
+    &-icon{
+        color: #fff;
+        font-size: 2.5rem;
+    }
+
+    &:hover{
+        transform: scale(1.15);
+        background-image: linear-gradient( #ec3f00 , #ff4400);
+        box-shadow: 0 3px 1rem #000000ce;
+    }
+}
