@@ -1,60 +1,115 @@
-<!DOCTYPE html>   
-<html>   
-<head>  
-<meta name="viewport" content="width=device-width, initial-scale=1">  
-<title> Login Page </title>  
-<style>   
-Body {  
-  font-family: Calibri, Helvetica, sans-serif;  
-  background-color: pink;  
-}  
-button {   
-       background-color: #4CAF50;   
-       width: 100%;  
-        color: orange;   
-        padding: 15px;   
-        margin: 10px 0px;   
-        border: none;   
-        cursor: pointer;   
-         }   
- form {   
-        border: 3px solid #f1f1f1;   
-    }   
- input[type=text], input[type=password] {   
-        width: 100%;   
-        margin: 8px 0;  
-        padding: 12px 20px;   
-        display: inline-block;   
-        border: 2px solid green;   
-        box-sizing: border-box;   
-    }  
- button:hover {   
-        opacity: 0.7;   
-    }   
-  .cancelbtn {   
-        width: auto;   
-        padding: 10px 18px;  
-        margin: 10px 5px;  
-    }   
-        
-     
- .container {   
-        padding: 25px;   
-        background-color: lightblue;  
-    }   
-</style>   
-</head>    
-<body>    
-    <center> <h1> Student Login Form </h1> </center>   
-    <form method='POST'>
-        {% csrf_token %}  
-        <div class="container">   
-            <label>Username : </label>   
-            <input type="text" placeholder="Enter Username" name="username" required>  
-            <label>Password : </label>   
-            <input type="password" placeholder="Enter Password" name="password" required>  
-            <button type="submit">Login</button>     
-        </div>   
-    </form>     
-</body>     
-</html>  
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+
+    <!-- Font Awsome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poiret+One&display=swap" rel="stylesheet">
+
+    <title>Login</title>
+</head>
+
+<body>
+    <!-- HERO SECTION -->
+    <div class="base">
+        <div class="hero">
+            &nbsp;
+        </div>
+
+        <!-- LOGIN  -->
+        <div class="login">
+
+            <div class="login-student">
+
+                <!-- student heading -->
+                <div class="heading">
+                    <li class="heading-primary"><span class="heading-first">S</span>tudent <span
+                            class="heading-first">L</span>ogin</li>
+                </div>
+
+                <!-- student body -->
+                <div class="body">
+                    <form action="#" method='POST'>
+                        {% csrf_token %}
+                        <div class="body-email">
+                            <label for="username">Username:</label> <br>
+                            <input type="text" name="student-username" id="username" placeholder="Enter your Username"
+                                required>
+                        </div>
+                        <div class="body-password">
+                            <label for="s_password">Password:</label> <br>
+                            <input type="password" name="student-password" id="s_pass" placeholder="Enter your password"
+                                minlength="8" required><i class="fas fa-eye shift-student"></i>
+                            <!-- <i class="fas fa-eye-slash"></i> -->
+                        </div>
+                        <!-- <div class="body-forgot">
+                            <a href="#" target="blank" class="body-forgot__pass link">Forgot Password ?</a>
+                        </div> -->
+                        <div class="body-login">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <!-- teacher login -->
+            <div class="login-teacher">
+
+                <!-- teacher heading -->
+                <div class="heading">
+                    <li class="heading-primary"><span class="heading-first">T</span>eacher <span
+                            class="heading-first">L</span>ogin</li>
+                </div>
+
+                <!-- teacher body -->
+                <div class="body">
+                    <form action="#" method='POST'>
+                        {% csrf_token %}
+                        <div class="body-email">
+                            <label for="username">Username:</label> <br>
+                            <input type="text" name="teacher-username" id="username" placeholder="Enter your Username"
+                                required>
+                        </div>
+                        <div class="body-password">
+                            <label for="t_password">Password:</label> <br>
+                            <input type="password" name="teacher-password" id="t_pass" placeholder="Enter your password"
+                                minlength="8" required><i class="fas fa-eye shift-teacher"></i>
+                        </div>
+                        <!-- <div class="body-forgot">
+                            <a href="#" target="blank" class="body-forgot__pass link">Forgot Password ?</a>
+                        </div> -->
+                        <div class="body-login">
+                            <input type="submit" value="Login">
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Swap Login :{ -->
+            <div class="foot">
+                <li foot>Switch to <span class="foot-var">teacher's</span> account</li>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- HELP SECTION -->
+    <a href="#">
+        <div class="help">
+            <i class="fas fa-question help-icon"></i>
+        </div>
+    </a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="{% static 'js/script.js' %}"></script>
+</body>
+
+</html>
