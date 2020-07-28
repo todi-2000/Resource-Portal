@@ -1,0 +1,115 @@
+.foot{
+
+    &-social{
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+        padding: 1rem 5rem;
+        border: 1px solid $color-bg-grey;
+
+        &__head{
+            color:$color-grey-dark;
+            font-size: 2.5rem;
+            margin-right: 5rem;
+            font-weight: 600;
+        }
+
+        &__icon{         
+            font-size: 3rem;
+
+            & > *{
+                margin: 0 1rem;
+                color:$color-base!important;
+            }           
+            
+        }
+    }
+
+    &-link{
+        background-color: $color-grey-dark;
+        text-align: center;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+        grid-gap: 2rem;
+        justify-items: center;
+
+        .foot-link-head{
+            font-size: 2rem;
+            color:rgb(196, 196, 196);
+            font-weight: 700;
+
+            &:hover{
+                text-decoration: none;
+            }
+        }
+
+        &__part{
+            font-size: 1.5rem;
+            margin: 3rem 0;
+
+            & > *{
+                margin: 1rem 0;
+
+                &:hover{
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    &-copy{ 
+        background-color: $color-grey-dark;
+        color: $color-grey-light;
+        font-size: 1.4rem;
+        padding: 0 5rem 2.5rem 7.5rem;
+
+        display: flex;
+        justify-content: space-between;
+
+        &__gen{
+
+            & > *{
+                display: inline-block;
+                margin: 0 3rem;
+                
+                &:hover{
+                    text-decoration: underline;
+                    text-decoration-color: #ffffff;
+                }
+            }
+        }
+    }
+}
+
+//After 600px
+@media only screen and (max-width:37.5em){
+    .foot-social{
+        justify-content: space-evenly;
+
+        &__head{
+            display: none;
+        }
+
+        &__icon > *{
+            margin: 0 1.5rem;
+        }
+    }
+    .foot-link{
+        &__part{
+            margin: 2rem 0;
+        }
+    }
+    .foot-copy{
+        margin-bottom: 5.3rem;
+        padding: 3rem 0;
+
+        flex-direction: column;
+        text-align: center;
+
+        & > * {
+            padding: 1rem 0;
+        }
+    }
+    
+}

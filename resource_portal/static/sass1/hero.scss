@@ -1,0 +1,83 @@
+.landing{
+    height: 90vh;
+    width: 100vw;
+    // linear-gradient(to bottom,rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.4)),
+    // background-image:linear-gradient(rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.75)), url('/img/word.jpg');
+    background-image:linear-gradient(rgba(0, 0, 0, 0.4) 40%, rgba(0, 0, 0, 0.75)), url('https://source.unsplash.com/1600x900/?study,school,knowledge,books');
+    background-size: cover;
+    background-position: top;
+    background-attachment: top;
+}
+
+.hero{
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    text-align: center;
+
+    &-title{
+        font-size: 8rem;
+        color: #ffffff;
+
+        text-shadow: 2px 2px black;
+
+        &-sub{
+            font-size: 3rem;
+            color: #ffffff;
+            text-shadow: 2px 2px black;
+            margin: 3rem 0 8rem;
+        }
+    }
+
+    &-task{
+        font-size: 4rem;
+        color: #ffffff;
+        text-shadow: 2px 2px black;
+        cursor: pointer;
+    }
+}
+
+//After 800px
+@media only screen and (max-width: 50em){
+    
+    .hero{
+
+        &-title{
+            font-size: 6.5rem;
+
+            &-sub{
+                font-size: 2rem;
+                margin: 2rem 0 6rem;
+            }
+        }
+
+        &-task{
+            font-size: 3rem;
+        }
+    }
+
+}
+
+//After 600px
+@media only screen and (max-width: 37.5em){
+    
+    .hero{
+        &-title{
+            font-size: 5.5rem;
+
+            &-sub{
+                font-size: 2rem;
+                margin: 2rem 0 6rem;
+                text-shadow: 2px 2px black;
+            }
+        }
+
+        &-task{
+            font-size: 3rem;
+            text-shadow: 2px 2px black;
+        }
+    }
+
+}

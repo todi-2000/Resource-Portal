@@ -1,0 +1,28 @@
+.animate-rotate{
+    animation: rotate 3s infinite linear;
+}
+
+@keyframes rotate{
+    0%{
+        transform: rotateZ(0deg);
+    }
+    100%{
+        transform: rotateZ(360deg);
+    }
+}
+
+.animate-upDown{
+    animation: upDown .8s infinite linear;
+}
+
+@keyframes upDown{
+    0%{
+        transform: translateY(0rem);
+    }
+    50%{
+        transform: translateY(1rem);
+    }
+    100%{
+        transform: translateY(0rem);
+    }
+}

@@ -1,0 +1,61 @@
+// Input bar
+.input-bar {
+  width: 80%;
+  border-radius: 0.8rem;
+  border: none;
+  background-color: $color-grey-light;
+  padding: 0.5rem;
+  font-family: inherit;
+
+  &::placeholder {
+    color: black;
+    padding: 0.5rem;
+  }
+}
+
+// display inline-b
+.d-inline {
+  display: inline-block;
+}
+
+// Component popup fav
+.fav-pop {
+  display: none;
+
+  position: fixed;
+  z-index: 99;
+  top: 90%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20rem;
+  height: 4rem;
+  margin: 0 auto;
+  color: $color-grey-light;
+  font-size: 1.6rem;
+  background-color: rgb(37, 36, 36);
+  border-radius: 4px;
+  text-align: center;
+  box-shadow: 0 3px 10px rgba(70, 70, 70, 0.329);
+
+  @media only screen and(max-width:37.5em) {
+    top: 85%;
+  }
+
+  &__message {
+    padding-top: 1rem;
+  }
+}
+
+// For Btn
+@mixin base-btn {
+  border: none;
+  font-size: 1.2rem;
+  background-color: $color-base;
+  color: $color-grey-light;
+  padding: 1rem 4rem;
+  border-radius: 4px;
+  margin: 0 3rem;
+  cursor: pointer;
+  transition: transform 0.2s;
+  box-shadow: $shadow;
+}

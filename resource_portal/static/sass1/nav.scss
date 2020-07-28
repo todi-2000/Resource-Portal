@@ -1,0 +1,150 @@
+.nav{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    // #ec3f00
+    background-color: $color-base;
+    color: $color-grey-light;
+    padding: 1rem 2rem;
+    z-index: 12;
+    box-shadow:0 3px 10px rgba(12, 12, 12, 0.4);
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 2fr 7fr 3fr;
+
+    &-logo{
+        display: flex;
+        cursor: pointer;
+
+        & > *{
+            font-size: 2rem;
+            margin: 0 .5rem;
+        }
+
+        & i{
+            padding-top: .3rem ;
+        }
+    }
+
+    &-resource{
+        text-align: center;
+        font-size: 1.5rem;
+        cursor: pointer;
+
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(4rem, 1fr));
+
+        &__card > *:hover{
+            color: #ffffff;
+        }
+    }
+
+    &-search{
+        color: $color-grey-light;
+        font-size: 1.8rem;
+
+        display: flex;
+        justify-content: center;
+
+        & > *{
+            margin: 0 1rem;
+        }   
+        
+        &__bar{
+
+            &:focus{
+                outline: none;
+            }
+        }
+
+        & i{
+            cursor: pointer;
+            padding: .6rem 0;
+        }
+    }
+}
+
+
+
+// INPUT BAR FOR SMALLER SCREEN CONFIG
+
+.sm-search-icon{
+    display: none;
+    color: $color-grey-light;
+    font-size: 1.8rem;
+}
+
+.sm-input{
+    display: none;
+}
+
+// After 900px
+@media only screen and (max-width: 56.25em){
+    .nav{
+        grid-template-columns: 2fr 9fr 1fr;
+        grid-row: 1fr 1fr;
+    }
+    .nav-search{
+        display: none;
+    }
+
+    .sm-search-icon{
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+    }
+    .sm-input{
+        display: flex;
+        justify-content: center;
+        margin-top: 1rem;
+        font-size: 1.8rem;
+
+        grid-column: 2 /span 1;
+
+        & > *{
+            margin: 1rem;
+        }
+    }
+}
+
+// After 700px  
+@media only screen and (max-width:43.75em){
+    html{
+        font-size: 57%;
+    }
+}
+
+//After 600px
+@media only screen and (max-width:37.5em){
+    .sm-search-icon, .sm-input{
+        display: none;
+    }
+    .nav{
+        grid-template-columns: 4fr 8fr;
+        grid-row: 1fr;
+        padding: 1.5rem 1rem;
+    }
+    .nav-search{
+        display: flex;
+    }
+
+    .nav-resource{
+        position: fixed;
+        background-color: $color-base;
+        z-index: 12;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        font-size: 2rem;
+
+        &__card li{
+            font-size: 1rem;
+        }
+
+        & > *{
+            padding: 1.2rem;
+        }
+    }
+}

@@ -1,0 +1,30 @@
+.heading {
+  font-size: 5rem;
+  padding: 3rem 0;
+  font-weight: 700;
+}
+.heading-sub {
+  font-size: 3rem;
+  color: $color-grey-light;
+}
+.col-head{
+  color: $color-grey-dark;
+  font-size: 2.5rem;
+}
+
+.res-head {
+  @media only screen and(max-width:37.5em) {
+    & {
+      font-size: 4rem;
+      padding: 2rem;
+      text-align: center;
+    }
+  }
+
+  @media only screen and(max-width:25em) {
+    & {
+      font-size: 3rem;
+      padding: 1rem;
+    }
+  }
+}

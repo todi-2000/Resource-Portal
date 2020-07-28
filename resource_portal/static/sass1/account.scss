@@ -1,0 +1,178 @@
+.acc-head{
+    width: 60vw;
+    min-width: 32rem;
+    margin-left: auto;
+    margin-right: auto;
+}
+.acc-body{
+    background-color: $color-bg-grey;
+    box-shadow: $shadow;
+    margin: 0 2rem;
+    padding: 4rem;
+    width: 60vw;
+    min-width: 32rem;
+    margin: 0 auto 4rem;
+
+    @media only screen and(max-width: 25rem){
+        padding: 2rem 2.5rem;
+    }
+}
+
+.acc-head, .acc-body{
+    @media only screen and(max-width: 62.5rem){
+        width: 80vw;
+    }
+}
+
+.prof{
+    display: grid;
+    grid-template-columns: 10fr 2fr;
+    grid-row: repeat(2, max-content);
+
+    @media only screen and(max-width: 62.5rem){
+        grid-template-columns: 1fr;
+        grid-row: repeat(3, max-content);
+    }
+
+    &-det{
+        & li{
+            color: $color-base;
+            font-weight: 600;
+            font-size: 1.7rem;
+            margin-top: .5rem;
+        }
+    
+        & > *{
+            padding: 1rem 0;
+            border-radius: 4px;
+        }
+    }
+
+    &-img {
+
+        @media only screen and(max-width: 62.5rem){
+            grid-row: 1 / 2;
+            text-align: center;
+        }
+    
+        & img{
+        width: 13rem;
+        border-radius: 50%;
+        border: 3px solid $color-base;
+        margin: 1rem 4rem; 
+
+        @media only screen and(max-width: 62.5rem){
+            margin: 1rem 0rem; 
+        }
+        }
+    }
+
+    &-btn {
+
+        padding: 5rem 0 2rem;
+
+        grid-column: 1 / -1;
+
+        display: flex;
+        justify-content: center;
+
+        @media only screen and(max-width: 81.25rem){
+            flex-direction: column; 
+            text-align: center;
+        }
+
+
+        & button{
+            @include base-btn;
+
+            &:hover{
+                transform: scale(1.05);
+            }
+
+            &:focus{
+                outline: none;
+            }
+
+            @media only screen and(max-width: 81.25rem){
+                width: 23rem;
+                margin: 1rem 0;
+            }
+        }
+    }
+}
+
+// FOR UPLOAD PAGE
+.up-form{
+    & label,& li{
+        color: $color-base;
+        font-weight: 600;
+        font-size: 1.7rem;
+        margin-top: .5rem;
+    }
+
+    & form{
+        & > *{
+            margin: 2rem;
+
+            & > *, & > * > *{
+                margin: 1rem 0; 
+            }
+        }
+
+        @media only screen and(max-width: 53.125rem){
+            & > *{
+                margin: 0rem;
+    
+                & > *, & > * > *{
+                    margin: 1rem 0; 
+                }
+            }
+        }
+    }
+}
+.s-block{
+    display: flex;
+    justify-content: center;
+    & > *{
+        &:not(:last-child){
+            margin-right: 2rem;
+        }
+        width: 100%;
+    } 
+}
+@media only screen and(max-width: 53.125rem){
+    .s-block{
+        justify-content: center;
+        flex-direction: column;
+        & > *{
+            &:not(:last-child){
+                margin-right: 2rem;
+            }
+            width: 100%;
+        } 
+    }
+}
+.up-btn{
+    width: 23rem;
+    @include base-btn;
+
+    &:hover{
+        transform: scale(1.05);
+    }
+
+    &:focus{
+        outline: none;
+    }
+}
+.uInp, .uSec{
+    border: 1px solid black;
+    width: 100%;
+    border-radius: 0.8rem;
+    background-color: $color-bg-grey;
+    padding: 0.5rem;
+    font-family: inherit;
+
+    &:focus {
+        outline: none;
+    }
+}
