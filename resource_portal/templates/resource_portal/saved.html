@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Font Awsome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>Main</title>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav class="nav">
+
+        <!-- logo section -->
+        <div class="nav-logo">
+            <i class="fab fa-microsoft nav-logo__icon"></i>
+            <li class="nav-logo__title"><a href="index.html">MMIL</a></li>
+        </div>
+
+        <!-- resource section -->
+        <div class="nav-resource">
+            <div class="nav-resource__card">
+                <a href="resource.html">
+                    <i class="fas fa-atom animate-rotate"></i>
+                    <li class="">Resources</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="books.html">
+                    <i class="fas fa-book-open"></i>
+                    <li class="">Books</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="teacher.html">
+                    <i class="fas fa-scroll"></i>
+                    <li class="">Teacher</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="saved.html">
+                    <i class="fas fa-heart"></i>
+                    <li class="">Saved</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="account.html">
+                    <i class="fas fa-user-circle"></i>
+                    <li class="">Account</li>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-search">
+            <input class="nav-search__bar input-bar" type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Search BAR FOR SMALLER SCREEN btw 900px - 600px nav.scss-->
+        <div class="sm-search-icon">
+            <i class="fas fa-search-plus sm-toggle__icon"></i>
+        </div>
+        <div class="sm-input">
+            <input class="input-bar" type="text" placeholder="Search....">
+            <i class="fas fa-search"></i>
+        </div>
+
+    </nav>
+
+    <!-- HERO -->
+    <div class="resource-hero">
+        <h1 class="heading res-head">Saved<i class="fas fa-heart resource-hero__icon"></i></h1>
+    </div>
+
+    <!-- MAIN -->
+    <main class="resource-main">
+
+        <div class="resource-side">
+            <div class="resource-dep">
+                <div class="resource-dep__toggler r-head">
+                    Select Department <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="resource-dep__list r-list">
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="cse" id="r-cs"><label for="r-cs">CSE</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="it" id="r-it"><label for="r-it">IT</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="ece" id="r-ece"><label for="r-ece">ECE</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="ee" id="r-ee"><label for="r-ee">EE</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="me" id="r-me"><label for="">ME</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="civil" id="r-civil"><label for="r-civil">Civil</label>
+                    </div>     
+                </div>       
+            </div>
+            <br>
+            <div class="resource-year">
+                <div class="resource-year__toggler r-head">
+                    Select Year <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="resource-year__list r-list">
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="1st year" id="r-y1"><label for=r-y1>1st year</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="2nd year" id="r-y2"><label for=r-y2>2nd year</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="3rd year" id="r-y3"><label for=r-y3>3rd year</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="4th year" id="r-y4"><label for=r-y4>4th year</label>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="resource-resource">
+                <div class="resource-resource__toggler r-head">
+                    Select Resource <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="resource-resource__list r-list">
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="Assignment" id="r-assign"><label for="r-assign">Assignment</label>
+                    </div>
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="Notes" id="r-note"><label for="r-note">Notes</label>
+                    </div>
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="Previous year papers" id="r-prev"><label for="r-prev">Previous year papers</label>
+                    </div>
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="Books" id="r-books"><label for="r-books">Books</label>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="resource-mid">
+
+            <div class="resource-card">
+                <div class="resource-card__head">
+                    <span>CSE</span>
+                    <span>3rd</span>
+                </div>
+                <div class="resource-card__img">
+                    <img src="img/books.jpg" alt="">
+                </div>
+                <div class="resource-card__info">
+                    <li>Subject : <span>Math-76</span></li>
+                    <li>By : <span>N.P. Bali</span></li>                    
+                </div>  
+                <div class="resource-card__detail">
+                    <span>11/04/2021</span>
+                    <button class="fav-me"><i class="fas fa-heart"></i></button>
+                </div> 
+                <div class="resource-card__link">
+                    <a href="#">
+                        <button>View</button>
+                    </a>
+                </div>             
+            </div>
+            
+            
+            <div class="resource-card">
+                <div class="resource-card__head">
+                    <span>CSE</span>
+                    <span>3rd</span>
+                </div>
+                <div class="resource-card__img">
+                    <img src="img/books.jpg" alt="">
+                </div>
+                <div class="resource-card__info">
+                    <li>Subject : <span>Math-76</span></li>
+                    <li>By : <span>N.P. Bali</span></li>                    
+                </div>  
+                <div class="resource-card__detail">
+                    <span>11/04/2021</span>
+                    <button class="fav-me"><i class="fas fa-heart"></i></button>
+                </div> 
+                <div class="resource-card__link">
+                    <a href="#">
+                        <button>View</button>
+                    </a>
+                </div>             
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-card__head">
+                    <span>CSE</span>
+                    <span>3rd</span>
+                </div>
+                <div class="resource-card__img">
+                    <img src="img/books.jpg" alt="">
+                </div>
+                <div class="resource-card__info">
+                    <li>Subject : <span>Math-76</span></li>
+                    <li>By : <span>N.P. Bali</span></li>                    
+                </div>  
+                <div class="resource-card__detail">
+                    <span>11/04/2021</span>
+                    <button class="fav-me"><i class="fas fa-heart"></i></button>
+                </div> 
+                <div class="resource-card__link">
+                    <a href="#">
+                        <button>View</button>
+                    </a>
+                </div>             
+            </div>
+
+            <div class="resource-card">
+                <div class="resource-card__head">
+                    <span>CSE</span>
+                    <span>3rd</span>
+                </div>
+                <div class="resource-card__img">
+                    <img src="img/books.jpg" alt="">
+                </div>
+                <div class="resource-card__info">
+                    <li>Subject : <span>Math-76</span></li>
+                    <li>By : <span>N.P. Bali</span></li>                    
+                </div>  
+                <div class="resource-card__detail">
+                    <span>11/04/2021</span>
+                    <button class="fav-me"><i class="fas fa-heart"></i></button>
+                </div> 
+                <div class="resource-card__link">
+                    <a href="#">
+                        <button>View</button>
+                    </a>
+                </div>             
+            </div>
+        </div>
+    </main>
+
+    <!-- FAVORITE POPUP component.scss-->
+    <div class="fav-pop">
+        <li class="fav-pop__message">Added to favorites!</li>
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="foot">
+        <div class="foot-social">
+            <div class="foot-social__head">
+                Join Us
+            </div>
+            <div class="foot-social__icon">
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="foot-link">
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+        </div>
+        <div class="foot-copy">
+            <div class="foot-copy__right">&copy; MMIL &nbsp; <span id="copyrightYear"></span></div>
+            <div class="foot-copy__gen">
+                <li><a href="">link1</a></li>
+                <li><a href="">link2</a></li>
+                <li><a href="">link3</a></li>
+                <li><a href="">link4</a></li>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

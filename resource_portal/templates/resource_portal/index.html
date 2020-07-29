@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="css/main.css">
+
+    <!-- Font Awsome CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+
+    <title>Main</title>
+</head>
+
+<body>
+    <!-- NAV BAR -->
+    <nav class="nav">
+
+        <!-- logo section -->
+        <div class="nav-logo">
+            <i class="fab fa-microsoft nav-logo__icon"></i>
+            <li class="nav-logo__title"><a href="index.html">MMIL</a></li>
+        </div>
+
+        <!-- resource section -->
+        <div class="nav-resource">
+            <div class="nav-resource__card">
+                <a href="resource.html">
+                    <i class="fas fa-atom animate-rotate"></i>
+                    <li class="">Resources</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="books.html">
+                    <i class="fas fa-book-open"></i>
+                    <li class="">Books</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="teacher.html">
+                    <i class="fas fa-scroll"></i>
+                    <li class="">Teacher</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="saved.html">
+                    <i class="fas fa-heart"></i>
+                    <li class="">Saved</li>
+                </a>
+            </div>
+            <div class="nav-resource__card">
+                <a href="account.html">
+                    <i class="fas fa-user-circle"></i>
+                    <li class="">Account</li>
+                </a>
+            </div>
+        </div>
+
+        <div class="nav-search">
+            <input class="nav-search__bar input-bar" type="text" placeholder="Search...">
+            <i class="fas fa-search"></i>
+        </div>
+
+        <!-- Search BAR FOR SMALLER SCREEN btw 900px - 600px nav.scss-->
+        <div class="sm-search-icon">
+            <i class="fas fa-search-plus sm-toggle__icon"></i>
+        </div>
+        <div class="sm-input">
+            <input class="input-bar" type="text" placeholder="Search....">
+            <i class="fas fa-search"></i>
+        </div>
+
+    </nav>
+
+    <!-- HERO SECTION -->
+    <div class="landing">
+        <div class="hero">
+            <h1 class="hero-title">Student Resources</h1>
+            <h3 class="hero-title-sub">Lorem ipsum, dolor sit amet consectetur adipisicing elit.</h3>
+            <div class="hero-task">
+                <li class="explore"> Explore <i class="fab fa-wpexplorer"></i></li>
+            </div>
+        </div>
+    </div>
+
+    <!-- MASTER SECTION -->
+    <main class="main-landing">
+
+        <!-- GET STARTED gs.scss-->
+        <section class="gs">
+            <div class="gs-head heading">
+                <li>  Getting Started <i class="fas fa-cogs"></i></li>
+            </div>
+            <div class="gs-sec">
+                <div class="gs-sec__search">
+                    <div class="gs-card-icon">
+                        <i class="fas fa-search"></i>
+                    </div>
+                    <div class="gs-card-text">
+                        Search your favorite notes and books among over 1000+ resources
+                    </div>
+                </div>
+                <div class="gs-sec__save">
+                    <div class="gs-card-icon">
+                        <i class="fas fa-heart"></i>
+                    </div>
+                    <div class="gs-card-text">
+                        Save what you like and collect all at one place.
+                    </div>
+                </div>
+                <div class="gs-sec__study">
+                    <div class="gs-card-icon">
+                        <i class="fas fa-user-graduate"></i>
+                    </div>
+                    <div class="gs-card-text">
+                       Study anytime anywhere. With our downloadable resources.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Field Wise Sections landing.scss-->
+        <section class="field explore-target">
+
+            <div class="field-head">
+                <h2>Choose your field <i class="fas fa-atlas"></i></h2>
+            </div>
+
+            <div class="field-part">
+
+                <div class="firstYear fcard">
+                    <div class="fcard-img">
+                        <img src="img/1st.jpg" alt="1st year">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Freshman</h4><br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i> </a>
+                    </div>
+                </div>
+
+                <div class="cse fcard">
+                    <div class="fcard-img">
+                        <img src="img/cs.jpg" alt="Computer Science And Engineering">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Computer Science And Engineering</h4> <br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="it fcard">
+                    <div class="fcard-img">
+                        <img src="img/it.jpg" alt="Information Technology">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Information Technology</h4><br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="ece fcard">
+                    <div class="fcard-img">
+                        <img src="img/ece.jpg" alt="Electronics and Communications Engineering">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Electronics and Communications Engineering</h4><br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="ee fcard">
+                    <div class="fcard-img">
+                        <img src="img/ee.jpg" alt="Electrical engineering">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Electrical engineering</h4><br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="me fcard">
+                    <div class="fcard-img">
+                        <img src="img/mech.jpg" alt="Mechanical Engineering">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Mechanical Engineering</h4><br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+                <div class="civil fcard">
+                    <div class="fcard-img">
+                        <img src="img/civil.jpg" alt="Civil Engineering">
+                    </div>
+                    <div class="fcard-text">
+                        <h4>Civil Engineering</h4><br>
+                        <a href="">Resources <i class="fas fa-long-arrow-alt-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="foot">
+        <div class="foot-social">
+            <div class="foot-social__head">
+                Join Us
+            </div>
+            <div class="foot-social__icon">
+                <a href=""><i class="fab fa-twitter-square"></i></a>
+                <a href=""><i class="fab fa-facebook-square"></i></a>
+                <a href=""><i class="fab fa-instagram-square"></i></a>
+                <a href=""><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+        <div class="foot-link">
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+            <div class="foot-link__part">
+                <li class="foot-link-head">item1</li>
+                <li><a href="">item2</a></li>
+                <li><a href="">item3</a></li>
+                <li><a href="">item4</a></li>
+                <li><a href="">item5</a></li>
+                <li><a href="">item6</a></li>
+            </div>
+        </div>
+        <div class="foot-copy">
+            <div class="foot-copy__right">&copy; MMIL &nbsp; <span id="copyrightYear"></span></div>
+            <div class="foot-copy__gen">
+                <li><a href="">link1</a></li>
+                <li><a href="">link2</a></li>
+                <li><a href="">link3</a></li>
+                <li><a href="">link4</a></li>
+            </div>
+        </div>
+    </footer>
+
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

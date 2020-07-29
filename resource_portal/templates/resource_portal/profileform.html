@@ -77,62 +77,48 @@
         </div>
 
     </nav>
-    
+
     <!-- HERO -->
     <div class="resource-hero acc-head">
-        <h1 class="heading res-head prof-head">Account<i class="fas fa-user-circle resource-hero__icon"></i></h1>
+        <h1 class="heading res-head prof-head">Upload Resource &nbsp; <i class="fas fa-file-upload resource-hero__icon"></i></h1>
     </div>
 
-    <!-- BOD -->
+    <!-- UPLOAD SECTION -->
+
+    <!-- START HERE account.scss-->
     <div class="acc-body">
-        <div class="prof">
-            <div class="prof-det">
-                <div class="prof-def__name">
-                    <h3 class="col-head">Name</h3>
-                    <li>{{ details.name }}</li>
+        <div class="up-form">
+            <form action="" method="POST">
+                {% csrf_token %}
+                <div class="uf-sub">
+                    <label for="">Name</label><br>
+                        {{ form.name }}
                 </div>
-                <div class="prof-def__email">
-                    <h3 class="col-head">E-mail</h3>
-                    <li>{{ details.email }}</li>
-                </div>
-                <div class="prof-def__inst">
-                    <h3 class="col-head">Institute</h3>
-                    <li>{{ details.college }}</li>
-                </div>
-                <div class="prof-def__dep">
-                    <h3 class="col-head">Department</h3>
-                    <li>{{ details.department }}</li>
-                </div>
-                {% if student == 1 %}
-                <div class="prof-def__year">
-                    <h3 class="col-head">Year</h3>
-                    <li>{{ details.year }}</li>
-                </div>
+                <div class="s-block">
+                    {% if student == 1 %}
+                    <div class="uf-year">
+                        <li class="d-inline">Select Year &nbsp;</li><br>
+                        {{ form.year }}
+                    </div>
                 {% endif %}
-            </div>
-            <!-- <div class="prof-img">
-                <img src="{% static "img/logo.png" %}" alt="">
-            </div> -->
-            <div class="prof-btn">
-                {% if student == 0 %}
-                <!-- btn only available for teachers -->
-                <div class="prof-btn__rup">
-                    <a href="#">
-                        <button>Upload Resources &nbsp; <i class="fas fa-file-upload"></i></button>
-                    </a>
+                    <div class="uf-dep">
+                        <li class="d-inline">Department &nbsp;</li><br>
+                        {{ form.department }} 
+                    </div>
                 </div>
-                {% endif %}
-                <div class="prof-btn__edit">
-                    <a href="{% url 'editform' %}">
-                        <button>Edit Profile &nbsp; <i class="fas fa-user-edit"></i></button>
-                    </a>
+                <div class="uf-url">
+                    <label for="">Email</label><br>
+                    {{ form.email }}
                 </div>
-                <div class="prof-btn__lout">
-                    <a href="{% url 'logout' %}">
-                        <button>Log Out &nbsp; <i class="fas fa-sign-out-alt"></i></button>
-                    </a>
+                <div class="uf-url">
+                        <label for="">College</label><br>
+                        {{ form.college }}
+                    </div>
+                <div class="s-block">
+                    <input type="submit" class="up-btn" value="Edit">
                 </div>
-            </div>
+                
+            </form>
         </div>
     </div>
 
@@ -201,9 +187,9 @@
             </div>
         </div>
     </footer>
-    
+
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src={% static "js1/main.js" %}></script>
+    <script src="js1/main.js"></script>
 </body>
 
 </html>
