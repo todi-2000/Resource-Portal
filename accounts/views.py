@@ -6,6 +6,8 @@ from .models import Student,Teacher
 # Create your views here.
 
 def signup(request):
+    if request.user.is_authenticated:
+        return redirect('home')
     if request.method=='POST':
         try:
             if request.POST['student-username'] is not None:
@@ -36,6 +38,8 @@ def signup(request):
     return render(request,'accounts/index.html')
 
 def login(request):
+    if request.user.is_authenticated:
+        return redirect('home')
     if request.method=='POST':
         if 'student-username' in request.POST:
             user=auth.authenticate(username=request.POST['student-username'],password=request.POST['student-password'])

@@ -1,3 +1,4 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
 
@@ -6,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="{% static 'css1/main.css' %}">
 
     <!-- Font Awsome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
@@ -24,37 +25,37 @@
         <!-- logo section -->
         <div class="nav-logo">
             <i class="fab fa-microsoft nav-logo__icon"></i>
-            <li class="nav-logo__title"><a href="index.html">MMIL</a></li>
+            <li class="nav-logo__title"><a href="#">MMIL</a></li>
         </div>
 
         <!-- resource section -->
         <div class="nav-resource">
             <div class="nav-resource__card">
-                <a href="resource.html">
+                <a href="#">
                     <i class="fas fa-atom animate-rotate"></i>
                     <li class="">Resources</li>
                 </a>
             </div>
             <div class="nav-resource__card">
-                <a href="books.html">
+                <a href="#">
                     <i class="fas fa-book-open"></i>
                     <li class="">Books</li>
                 </a>
             </div>
             <div class="nav-resource__card">
-                <a href="teacher.html">
+                <a href="#">
                     <i class="fas fa-scroll"></i>
                     <li class="">Teacher</li>
                 </a>
             </div>
             <div class="nav-resource__card">
-                <a href="saved.html">
+                <a href="#">
                     <i class="fas fa-heart"></i>
                     <li class="">Saved</li>
                 </a>
             </div>
             <div class="nav-resource__card">
-                <a href="account.html">
+                <a href="{% url 'home' %}">
                     <i class="fas fa-user-circle"></i>
                     <li class="">Account</li>
                 </a>
@@ -87,46 +88,50 @@
     <!-- START HERE account.scss-->
     <div class="acc-body">
         <div class="up-form">
-            <form action="">
-                <div class="uf-sub">
-                    <label for="">Enter subject</label><br>
-                    <input type="text" class="uInp" placeholder="Enter subject...">
+            <form action="" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+                <div class="s-block">
+                    <div class="uf-sub">
+                        <label for="">Enter subject</label><br>
+                        {{ form.subject }}
+                    </div>
+                    <div class="uf-sub">
+                            <li class="d-inline">Select Type &nbsp;</li><br>
+                            {{ form.type }}
+                    </div>
                 </div>
                 <div class="s-block">
                     <div class="uf-year">
-                        <li class="d-inline">Select Year &nbsp;</li>
-                        <select class="uSec" name="" id="">
-                            <option value="1">1st Year</option>
-                            <option value="2">2nd Year</option>
-                            <option value="3">3rd Year</option>
-                            <option value="4">4th Year</option>
-                            <option value="0">All</option>
-                        </select>
+                        <li class="d-inline">Select Year &nbsp;</li><br>
+                        {{ form.year }}
                     </div>
                     <div class="uf-dep">
                         <li class="d-inline">Select Department &nbsp;</li>
-                        <select class="uSec" name="" id="">
+                        {{ form.department }}
+                        <!-- <select class="uSec" name="" id="">
                             <option value="">CSE</option>
                             <option value="">IT</option>
                             <option value="">ECE</option>
                             <option value="">EE</option>
                             <option value="">ME</option>
                             <option value="">Civil</option>
-                        </select>
+                        </select> -->
                     </div>
                 </div>
-                <div class="uf-url">
+                <!-- <div class="uf-url">
                     <label for="">Enter url</label><br>
                     <input class="uInp" type="text" placeholder="Enter resource url">
-                </div>
+                </div> -->
                 <div class="s-block">
                     <div class="uf-img">
                         <label for="">Choose thumbnail</label><br>
-                        <input  type="file" name="" id="">
+                        {{ form.thumbnail }}
+                        <!-- <input  type="file" name="" id=""> -->
                     </div>
                     <div class="uf-file">
                         <label for="">Choose File</label> <br>
-                        <input  type="file">
+                        {{ form.file }}
+                        <!-- <input  type="file"> -->
                     </div>
                 </div>
                 <div class="s-block">
@@ -204,7 +209,7 @@
     </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="js/main.js"></script>
+    <script src={% static "js1/main.js" %}></script>
 </body>
 
 </html>
