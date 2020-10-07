@@ -90,7 +90,6 @@
         <div class="up-form">
             <form action="" method="POST" enctype="multipart/form-data">
                 {% csrf_token %}
-                <div class="s-block">
                     <div class="uf-sub">
                         <label for="">Enter subject</label><br>
                         {{ form.subject }}
@@ -99,7 +98,6 @@
                             <li class="d-inline">Select Type &nbsp;</li><br>
                             {{ form.type }}
                     </div>
-                </div>
                 <div class="s-block">
                     <div class="uf-year">
                         <li class="d-inline">Select Year &nbsp;</li><br>

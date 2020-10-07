@@ -35,4 +35,13 @@ class TeacherProfileForm(forms.ModelForm):
 class UploadResourceForm(forms.ModelForm):
     class Meta:
         model=Resource
-        fields="__all__"
+        fields=['subject','year','type','department','file','thumbnail']
+        labels={'subject':'subject','year':'year','type':'type','department': 'department','file':'file','thumbnail':'thumbnail'}
+        widgets = {
+        'department': forms.Select(attrs={'class':'uSec'}),
+        'type': forms.Select(attrs={'class':'uSec'}),
+        }
+    def __init__(self, *args, **kwargs):
+        super(UploadResourceForm, self).__init__(*args, **kwargs)
+        self.fields['subject'].widget.attrs.update({'placeholder': 'Subject','class':'uInp'})
+        self.fields['year'].widget.attrs.update({'placeholder': 'Year','class':'uInp'})
