@@ -70,3 +70,18 @@ def uploadresources(request):
         return render(request,'resource_portal/resUp.html',context)
     except Teacher.DoesNotExist:
         return redirect('home')
+
+def index(request):
+    return render(request,"resource_portal/index.html")
+
+def resources(request):
+    return render(request,'resource_portal/resource.html')
+
+def books(request):
+    return render(request,'resource_portal/books.html')
+
+def teachers(request):
+    return render(request,'resource_portal/byteacher.html')
+
+def saved(request):
+    return render(request,'resource_portal/saved.html')
