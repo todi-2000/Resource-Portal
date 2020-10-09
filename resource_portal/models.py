@@ -1,5 +1,5 @@
 from django.db import models
-
+from django.contrib.auth.models import User
 # Create your models here.
 Branch = [('None', 'None'),
             ('CS', 'Computer Science and Engineering'),
@@ -27,6 +27,7 @@ Type=[
 ]
 
 class Resource(models.Model):
+    Teacher=models.ForeignKey(User,on_delete=models.CASCADE,null=True,blank=True)
     subject = models.CharField(max_length=100)
     year=models.CharField(max_length=10,choices=Year,default='None')
     type=models.CharField(max_length=100,choices=Type,default='Select')

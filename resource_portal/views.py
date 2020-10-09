@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.decorators import login_required
 from accounts.models import Student,Teacher
 from .forms import StudentProfileForm,TeacherProfileForm,UploadResourceForm
+from django.contrib import messages 
 # Create your views here.
 
 @login_required(login_url='login')
@@ -59,9 +60,11 @@ def uploadresources(request):
         user=Teacher.objects.get(teacher=request.user)
         if request.method=="POST":
             form=UploadResourceForm(request.POST,request.FILES)
-            print(form)
             if form.is_valid():
-                form.save()
+                p=form.save(commit=False)
+                p.Teacher=request.user
+                p.save()
+                messages.success(request, 'Uploaded Successfully!')
                 return redirect('home')
         form=UploadResourceForm()
         context={
