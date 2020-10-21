@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- Stylesheet -->
-    <link rel="stylesheet" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" href="{% static 'accounts/css/main.css' %}">
 
     <!-- Font Awsome CDN -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" />
@@ -15,7 +15,7 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Allura&family=Poiret+One&display=swap" rel="stylesheet">
 
-    <title>Login</title>
+    <title>Sign Up</title>
 </head>
 
 <body>
@@ -33,7 +33,7 @@
                 <!-- student heading -->
                 <div class="heading">
                     <li class="heading-primary"><span class="heading-first">S</span>tudent <span
-                            class="heading-first">L</span>ogin</li>
+                            class="heading-first">S</span>ignup</li>
                 </div>
 
                 <!-- student body -->
@@ -52,10 +52,10 @@
                             <!-- <i class="fas fa-eye-slash"></i> -->
                         </div>
                         <div class="body-forgot">
-                            <a href="{% url 'signup' %}" class="body-forgot__pass link">Don't Have Account ?</a>
+                            <a href="{% url 'login' %}" class="body-forgot__pass link">Already Have an account ?</a>
                         </div>
                         <div class="body-login">
-                            <input type="submit" value="Login">
+                            <input type="submit" value="Sign Up">
                         </div>
                     </form>
                 </div>
@@ -67,7 +67,7 @@
                 <!-- teacher heading -->
                 <div class="heading">
                     <li class="heading-primary"><span class="heading-first">T</span>eacher <span
-                            class="heading-first">L</span>ogin</li>
+                            class="heading-first">S</span>ignup</li>
                 </div>
 
                 <!-- teacher body -->
@@ -85,10 +85,10 @@
                                 minlength="8" required><i class="fas fa-eye shift-teacher"></i>
                         </div>
                         <div class="body-forgot">
-                            <a href="{% url 'signup' %}" class="body-forgot__pass link">Dont' Have An Account ?</a>
+                            <a href="{% url 'login' %}" class="body-forgot__pass link">Already Have an account ?</a>
                         </div>
                         <div class="body-login">
-                            <input type="submit" value="Login">
+                            <input type="submit" value="Sign Up">
                         </div>
                     </form>
                 </div>
@@ -109,7 +109,7 @@
     </a>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="{% static 'js/script.js' %}"></script>
+    <script src="{% static 'accounts/js/script.js' %}"></script>
 </body>
 
 </html>

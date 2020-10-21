@@ -3,6 +3,7 @@ from django.contrib.auth.decorators import login_required
 from accounts.models import Student,Teacher
 from .forms import StudentProfileForm,TeacherProfileForm,UploadResourceForm
 from django.contrib import messages 
+from .models import *
 # Create your views here.
 
 @login_required(login_url='login')
@@ -78,7 +79,11 @@ def index(request):
     return render(request,"resource_portal/index.html")
 
 def resources(request):
-    return render(request,'resource_portal/resource.html')
+    context={
+        'resources':Resource.objects.all()
+    }
+    print(context['resources'][0].file)
+    return render(request,'resource_portal/resource.html',context)
 
 def books(request):
     return render(request,'resource_portal/books.html')

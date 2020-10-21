@@ -3,14 +3,14 @@ $('.foot-var').on('click', function () {
     if (this.textContent == 'student\'s') {
         $(this).text('teacher\'s');
         $('.login-teacher').slideUp();
-        $('.hero').delay(200).css({ "background-image": "url(/static/img/student-bg.jpg)" });
+        // $('.hero').delay(200).css({ "background-image": "url(../img/student-bg.jpg)" });
         $('.login-student').delay(400).slideDown();
 
     }
     else {
         $(this).text('student\'s');
         $('.login-student').slideUp();
-        $('.hero').css({ "background-image": "url(/static/img/black.jpg)" });
+        // $('.hero').css({ "background-image": "url(../img/black.jpg)" });
         $('.login-teacher').delay(400).slideDown();
     }
 });
