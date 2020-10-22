@@ -81,7 +81,6 @@
                 </div>
             </div>
         </div>
-
         <div class="resource-mid">
             {% for res in resources %}
             <div class="resource-card">
@@ -94,15 +93,20 @@
                 </div>
                 <div class="resource-card__info">
                     <li>Subject : <span>{{ res.subject }}</span></li>
-                    <li>By : <span>N.P. Bali</span></li>                    
+                    <li>Topic : <span>{{ res.topic }}</span></li>
+                    {% if res.Teacher %}
+                    <li>By : <span>{{ res.Teacher.name }}</span></li> 
+                    {% else %}
+                    <li>By : <span>{{ res.author }}</span></li>
+                    {% endif %}
                 </div>  
                 <div class="resource-card__detail">
                     <!-- <span>11/04/2021</span> -->
                     <button class="fav-me"><i class="far fa-heart"></i></button>
                 </div> 
                 <div class="resource-card__link">
-                    <a href="{{ res.file }}">
-                        <button>View</button>
+                    <a href="{{ res.file.url }}"  target="iframe_a">
+                        <button>Download</button>
                     </a>
                 </div>             
             </div>

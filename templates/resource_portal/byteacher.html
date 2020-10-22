@@ -84,99 +84,35 @@
     </div>
 
     <div class="resource-mid">
-
+        {% for res in teacher %}
         <div class="resource-card">
             <div class="resource-card__head">
-                <span>CSE</span>
-                <span>3rd</span>
+                <span>{{ res.department }}</span>
+                <span>{{ res.year }}</span>
             </div>
             <div class="resource-card__img">
-                <img src="img/books.jpg" alt="">
+                <img src={{ res.thumbnail.url }} alt="Not loaded">
             </div>
             <div class="resource-card__info">
-                <li>Subject : <span>Math-76</span></li>
-                <li>By : <span>N.P. Bali</span></li>
+                <li>Subject : <span>{{ res.subject }}</span></li>
+                <li>Topic : <span>{{ res.topic }}</span></li>
+                {% if res.Teacher %}
+                <li>By : <span>{{ res.Teacher.name }}</span></li>
+                {% else %}
+                <li>By : <span>{{ res.author }}</span></li>
+                {% endif %}
             </div>
             <div class="resource-card__detail">
-                <span>11/04/2021</span>
+                <!-- <span>11/04/2021</span> -->
                 <button class="fav-me"><i class="far fa-heart"></i></button>
             </div>
             <div class="resource-card__link">
-                <a href="#">
-                    <button>View</button>
+                <a href="{{ res.file.url }}" target="iframe_a">
+                    <button>Download</button>
                 </a>
             </div>
         </div>
-
-
-        <div class="resource-card">
-            <div class="resource-card__head">
-                <span>CSE</span>
-                <span>3rd</span>
-            </div>
-            <div class="resource-card__img">
-                <img src="img/books.jpg" alt="">
-            </div>
-            <div class="resource-card__info">
-                <li>Subject : <span>Math-76</span></li>
-                <li>By : <span>N.P. Bali</span></li>
-            </div>
-            <div class="resource-card__detail">
-                <span>11/04/2021</span>
-                <button class="fav-me"><i class="far fa-heart"></i></button>
-            </div>
-            <div class="resource-card__link">
-                <a href="#">
-                    <button>View</button>
-                </a>
-            </div>
-        </div>
-
-        <div class="resource-card">
-            <div class="resource-card__head">
-                <span>CSE</span>
-                <span>3rd</span>
-            </div>
-            <div class="resource-card__img">
-                <img src="img/books.jpg" alt="">
-            </div>
-            <div class="resource-card__info">
-                <li>Subject : <span>Math-76</span></li>
-                <li>By : <span>N.P. Bali</span></li>
-            </div>
-            <div class="resource-card__detail">
-                <span>11/04/2021</span>
-                <button class="fav-me"><i class="far fa-heart"></i></button>
-            </div>
-            <div class="resource-card__link">
-                <a href="#">
-                    <button>View</button>
-                </a>
-            </div>
-        </div>
-
-        <div class="resource-card">
-            <div class="resource-card__head">
-                <span>CSE</span>
-                <span>3rd</span>
-            </div>
-            <div class="resource-card__img">
-                <img src="img/books.jpg" alt="">
-            </div>
-            <div class="resource-card__info">
-                <li>Subject : <span>Math-76</span></li>
-                <li>By : <span>N.P. Bali</span></li>
-            </div>
-            <div class="resource-card__detail">
-                <span>11/04/2021</span>
-                <button class="fav-me"><i class="far fa-heart"></i></button>
-            </div>
-            <div class="resource-card__link">
-                <a href="#">
-                    <button>View</button>
-                </a>
-            </div>
-        </div>
+        {% endfor %}
     </div>
 </main>
 

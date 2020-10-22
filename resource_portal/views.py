@@ -63,7 +63,7 @@ def uploadresources(request):
             form=UploadResourceForm(request.POST,request.FILES)
             if form.is_valid():
                 p=form.save(commit=False)
-                p.Teacher=request.user
+                p.Teacher=Teacher.objects.get(teacher=request.user)
                 p.save()
                 messages.success(request, 'Uploaded Successfully!')
                 return redirect('home')
@@ -82,14 +82,25 @@ def resources(request):
     context={
         'resources':Resource.objects.all()
     }
-    print(context['resources'][0].file)
     return render(request,'resource_portal/resource.html',context)
 
 def books(request):
-    return render(request,'resource_portal/books.html')
+    context={
+        'books':Resource.objects.filter(type="Books")
+    }
+    return render(request,'resource_portal/books.html',context)
 
 def teachers(request):
-    return render(request,'resource_portal/byteacher.html')
+    resources=Resource.objects.all()
+    teachers=[]
+    for res in resources:
+        if res.Teacher!=None:
+            teachers.append(res)
+    print(teachers)
+    context={
+        'teacher':teachers
+    }
+    return render(request,'resource_portal/byteacher.html',context)
 
 def saved(request):
     return render(request,'resource_portal/saved.html')

@@ -41,8 +41,9 @@ INSTALLED_APPS = [
     
     #Apps
     'accounts',
-    'resource_portal'
+    'resource_portal',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',

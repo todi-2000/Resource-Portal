@@ -22,6 +22,14 @@
                         {{ form.subject }}
                     </div>
                     <div class="uf-sub">
+                        <label for="">Enter Topic</label><br>
+                        {{ form.topic }}
+                    </div>
+                    <div class="uf-sub">
+                        <label for="">Enter Author</label><br>
+                        {{ form.author }}
+                    </div>
+                    <div class="uf-sub">
                             <li class="d-inline">Select Type &nbsp;</li><br>
                             {{ form.type }}
                     </div>
@@ -60,10 +68,25 @@
                     </div>
                 </div>
                 <div class="s-block">
-                    <input type="submit" class="up-btn" value="Upload">
+                    <input type="submit" class="up-btn" value="Upload" id="Upload">
                 </div>
                 
             </form>
         </div>
     </div>
 {% endblock content %}
+
+{% block javascript %}
+<script type="text/javascript">
+    $(document).ready(function(){
+        $("#Upload").click(function(){
+            swal({
+                title: "Good job!",
+                text: "You clicked the button!",
+                icon: "success",
+                button: "OK",
+            });
+        });
+    });
+</script>
+{% endblock javascript %}
