@@ -104,3 +104,12 @@ def teachers(request):
 
 def saved(request):
     return render(request,'resource_portal/saved.html')
+
+def deleteresource(request):
+    user=Teacher.objects.get(teacher=request.user)
+    resources=Resource.objects.filter(Teacher=user)
+    context={
+        'resource':resources
+    }
+    return render(request,'resource_portal/delete.html',context)
+    

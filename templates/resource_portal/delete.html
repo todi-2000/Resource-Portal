@@ -1,0 +1,55 @@
+{% extends 'resource_portal/base.html' %}
+{% load static %}
+<!---------------------------- -->
+
+{% block title %}Delete{% endblock title %}
+
+{% block content %}
+<!-- HERO -->
+<div class="resource-hero acc-head">
+    <h1 class="heading res-head prof-head">Delete Resource &nbsp; <i class="fas fa-trash resource-hero__icon"></i>
+    </h1>
+</div>
+
+<!-- UPLOAD SECTION -->
+
+<!-- START HERE account.scss-->
+<div class="acc-body">
+    <div class="up-form">
+        <form action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <div class="uf-dep">
+                <li class="d-inline">Select Resource &nbsp;</li>
+                <select class="uSec" name="" id="">
+                    <option value="">Select</option>
+                    {% for res in resource %}
+                    <option value="{{ res.id }}" id="{{ res.id }}">{{ res.topic }}</option>  
+                    {% endfor %}
+                </select>
+            </div>
+            <div class="s-block">
+                <input type="submit" class="up-btn" value="Delete" id="delete">
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock content %}
+
+{% block javascript %}
+<script>
+    $(document).ready(function () {
+            $(".delete").click(function () {
+                var id_number = $('select').attr('id');
+                console.log(id_number);
+                // $.ajax({
+                //     type: 'DELETE',
+                //     url: 'owner/{item.id}/',
+                //     data: 'identifer=' + id_number,
+                //     success: function () {
+                //         if (data)  alert("Success!") }
+                //     });
+            });
+        });
+</script>
+{% endblock javascript %}
