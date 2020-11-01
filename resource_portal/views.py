@@ -4,6 +4,7 @@ from accounts.models import Student,Teacher
 from .forms import StudentProfileForm,TeacherProfileForm,UploadResourceForm
 from django.contrib import messages 
 from .models import *
+from django.http import HttpResponse
 # Create your views here.
 
 @login_required(login_url='login')
@@ -106,6 +107,11 @@ def saved(request):
     return render(request,'resource_portal/saved.html')
 
 def deleteresource(request):
+    if request.method=="POST" and request.is_ajax:
+        print(request.POST)
+        val=request.POST['id_num']
+        Resource.objects.get(id=int(val)).delete()
+        return HttpResponse(val)
     user=Teacher.objects.get(teacher=request.user)
     resources=Resource.objects.filter(Teacher=user)
     context={

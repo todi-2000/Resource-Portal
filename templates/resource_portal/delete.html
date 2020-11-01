@@ -16,12 +16,12 @@
 <!-- START HERE account.scss-->
 <div class="acc-body">
     <div class="up-form">
-        <form action="" method="POST" enctype="multipart/form-data">
+        <form action="{% url 'delete' %}" method="POST" enctype="multipart/form-data">
             {% csrf_token %}
             <div class="uf-dep">
                 <li class="d-inline">Select Resource &nbsp;</li>
-                <select class="uSec" name="" id="">
-                    <option value="">Select</option>
+                <select class="uSec" name="" id="select">
+                    <option value="def" selected>Select</option>
                     {% for res in resource %}
                     <option value="{{ res.id }}" id="{{ res.id }}">{{ res.topic }}</option>  
                     {% endfor %}
@@ -38,18 +38,28 @@
 
 {% block javascript %}
 <script>
-    $(document).ready(function () {
-            $(".delete").click(function () {
-                var id_number = $('select').attr('id');
-                console.log(id_number);
-                // $.ajax({
-                //     type: 'DELETE',
-                //     url: 'owner/{item.id}/',
-                //     data: 'identifer=' + id_number,
-                //     success: function () {
-                //         if (data)  alert("Success!") }
-                //     });
+    $("#delete").click(function(e){
+        e.preventDefault();
+        var id_num=$("#select").val();
+        console.log(id_num);
+        if(id_num!="def"){
+         $.ajax({
+            method: "POST",
+            url: "{% url 'delete' %}",
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                id_num: id_num},
+                success: function (resp) {
+                 swal({
+                    title: "Deleted",
+                    text: "Successfully Deleted",
+                    icon: "success",
+                    button: "OK",
+                }); 
+                location.reload();
+                }
             });
-        });
+        }
+    });
 </script>
 {% endblock javascript %}

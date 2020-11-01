@@ -148,9 +148,10 @@
             </div>
         </div>
     </footer>
-    
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
-    <script src={% static "js1/main.js" %}></script>
+    <script src="{% static "resource_portal/js1/main.js" %}"></script>
+    {% block javascript %}
+    {% endblock javascript%}
     </body>
 </html>
