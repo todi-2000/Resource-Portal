@@ -10,5 +10,6 @@ urlpatterns = [
     path('books/',views.books,name='books'),
     path('byteachers/',views.teachers,name='byteacher'),
     path('favourites/',views.saved,name='saved'),
-    path('delete/',views.deleteresource,name='delete')
+    path('delete/',views.deleteresource,name='delete'),
+    path('add/fav/',views.fav,name='fav'),
 ]

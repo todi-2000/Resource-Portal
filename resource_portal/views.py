@@ -104,7 +104,9 @@ def teachers(request):
     return render(request,'resource_portal/byteacher.html',context)
 
 def saved(request):
-    return render(request,'resource_portal/saved.html')
+    current_user=request.user
+    resource=Resource.objects.filter(favourite=current_user)
+    return render(request,'resource_portal/saved.html',{'resources':resource})
 
 def deleteresource(request):
     if request.method=="POST" and request.is_ajax:
@@ -119,3 +121,18 @@ def deleteresource(request):
     }
     return render(request,'resource_portal/delete.html',context)
     
+@login_required(login_url='login')
+def fav(request):
+    current_user=request.user
+    if request.method=="POST":
+        book_id = request.POST.get('res')
+        print(book_id)
+        fav_book=Resource.objects.filter(id=book_id).get()
+        if current_user in fav_book.favourite.all():
+            fav_book.favourite.remove(current_user)
+        else:
+            fav_book.favourite.add(current_user)
+        context = {
+
+        }
+        return HttpResponse(book_id)

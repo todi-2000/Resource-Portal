@@ -100,15 +100,26 @@
                     <li>By : <span>{{ res.author }}</span></li>
                     {% endif %}
                 </div>  
+                <form method="POST">
+                    {% csrf_token %}
                 <div class="resource-card__detail">
                     <!-- <span>11/04/2021</span> -->
-                    <button class="fav-me"><i class="far fa-heart"></i></button>
+                    {% if user in res.favourite.all %}
+                    <button class="fav-me" id={{ res.id }}><i class="fas fa-heart"></i></button>
+                    {% else %}
+                    <button class="fav-me" id={{ res.id }}><i class="far fa-heart"></i></button>
+                    {% endif %}
                 </div> 
+                </form>
                 <div class="resource-card__link">
                     <a href="{{ res.file.url }}"  target="iframe_a">
                         <button>Download</button>
                     </a>
                 </div>             
+            </div>
+            {% empty %}
+            <div style="text-align: center;">
+                <h1>No Resource</h1>
             </div>
             {% endfor %}
         </div>
@@ -119,3 +130,20 @@
         <li class="fav-pop__message">Added to favorites!</li>
     </div>
 {% endblock content %}
+
+{% block javascript %}
+<script>
+    $('.fav-me').click(function(e){
+        e.preventDefault();
+        var book=$('.fav-me').attr('id');
+        $.ajax({
+            method: "POST",
+            url: "{% url 'fav' %}",
+            data: {
+                csrfmiddlewaretoken: '{{ csrf_token }}',
+                res: book,
+            },
+        });
+    });
+</script>
+{% endblock javascript %}

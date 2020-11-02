@@ -37,6 +37,7 @@ class Resource(models.Model):
     department=models.CharField(max_length=100,choices=Branch,default='None')
     file=models.FileField(upload_to="Files/")
     thumbnail=models.ImageField(upload_to="thumbnail/")
+    favourite=models.ManyToManyField(User,blank=True)
 
     def __str__(self):
         return self.subject
