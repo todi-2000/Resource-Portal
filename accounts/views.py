@@ -2,6 +2,7 @@ from django.shortcuts import render,redirect
 from django.contrib.auth.models import User,auth
 from django.contrib.auth.decorators import login_required
 from django.utils.datastructures import MultiValueDictKeyError
+from django.contrib import messages
 from .models import Student,Teacher
 # Create your views here.
 
@@ -51,6 +52,7 @@ def login(request):
                 except Student.DoesNotExist:
                     return redirect('login')
             else:
+                messages.info(request,"Wrong credentials💔💔.Please try again")
                 return redirect('login')
         else:
             user=auth.authenticate(username=request.POST['teacher-username'],password=request.POST['teacher-password'])
@@ -63,6 +65,7 @@ def login(request):
                     return redirect('login')
                 
             else:
+                messages.info(request,"Wrong credentials💔💔.Please try again")
                 return redirect('login')
     return render(request,'accounts/login.html')
 

@@ -80,32 +80,82 @@ def index(request):
     return render(request,"resource_portal/index.html")
 
 def resources(request):
+    resource=Resource.objects.all()
+    filter_dep = request.GET.getlist('dep')
+    filter_year = request.GET.getlist('year')
+    filter_type = request.GET.getlist('type')
+    #Department filter
+    if filter_dep:
+        resource=Resource.objects.filter(department__in=filter_dep) & resource
+    #Year filter
+    if filter_year:
+        resource=Resource.objects.filter(year__in=filter_year) & resource
+    #Type filter
+    if filter_type:
+        resource=Resource.objects.filter(type__in=filter_type) & resource       
+    print(resource)
     context={
-        'resources':Resource.objects.all()
+        'resources':resource
     }
     return render(request,'resource_portal/resource.html',context)
 
 def books(request):
+    resource=Resource.objects.filter(type="Books")
+    filter_dep = request.GET.getlist('dep')
+    filter_year = request.GET.getlist('year')
+    filter_type = request.GET.getlist('type')
+    #Department filter
+    if filter_dep:
+        resource=Resource.objects.filter(department__in=filter_dep) & resource
+    #Year filter
+    if filter_year:
+        resource=Resource.objects.filter(year__in=filter_year) & resource
+    #Type filter
+    if filter_type:
+        resource=Resource.objects.filter(type__in=filter_type) & resource
     context={
-        'books':Resource.objects.filter(type="Books")
+        'books':resource
     }
     return render(request,'resource_portal/books.html',context)
 
 def teachers(request):
     resources=Resource.objects.all()
-    teachers=[]
+    resource=[]
     for res in resources:
         if res.Teacher!=None:
-            teachers.append(res)
-    print(teachers)
+            resource.append(res)
+    filter_dep = request.GET.getlist('dep')
+    filter_year = request.GET.getlist('year')
+    filter_type = request.GET.getlist('type')
+    #Department filter
+    if filter_dep:
+        resource=Resource.objects.filter(department__in=filter_dep) & resource
+    #Year filter
+    if filter_year:
+        resource=Resource.objects.filter(year__in=filter_year) & resource
+    #Type filter
+    if filter_type:
+        resource=Resource.objects.filter(type__in=filter_type) & resource
     context={
-        'teacher':teachers
+        'teacher':resource
     }
     return render(request,'resource_portal/byteacher.html',context)
 
 def saved(request):
     current_user=request.user
     resource=Resource.objects.filter(favourite=current_user)
+    filter_dep = request.GET.getlist('dep')
+    filter_year = request.GET.getlist('year')
+    filter_type = request.GET.getlist('type')
+    #Department filter
+    if filter_dep:
+        resource=Resource.objects.filter(department__in=filter_dep) & resource
+    #Year filter
+    if filter_year:
+        resource=Resource.objects.filter(year__in=filter_year) & resource
+    #Type filter
+    if filter_type:
+        resource=Resource.objects.filter(type__in=filter_type) & resource
     return render(request,'resource_portal/saved.html',{'resources':resource})
 
 def deleteresource(request):

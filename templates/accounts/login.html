@@ -19,6 +19,13 @@
 </head>
 
 <body>
+    {% if messages %}
+    <script>
+        {% for message in messages %}
+        alert("{{ message }}");
+        {% endfor %}
+    </script>
+    {% endif %}
     <!-- HERO SECTION -->
     <div class="base">
         <div class="hero">

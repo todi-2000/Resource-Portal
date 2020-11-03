@@ -15,74 +15,84 @@
 <main class="resource-main">
 
     <div class="resource-side">
-        <div class="resource-dep">
-            <div class="resource-dep__toggler r-head">
-                Select Department <i class="fas fa-angle-down"></i>
-            </div>
-            <div class="resource-dep__list r-list">
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="cse" id="r-cs"><label for="r-cs">CSE</label>
+        <form method="GET">
+            <div class="resource-dep">
+                <div class="resource-dep__toggler r-head">
+                    Select Department <i class="fas fa-angle-down"></i>
                 </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="it" id="r-it"><label for="r-it">IT</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="ece" id="r-ece"><label for="r-ece">ECE</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="ee" id="r-ee"><label for="r-ee">EE</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="me" id="r-me"><label for="">ME</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="civil" id="r-civil"><label for="r-civil">Civil</label>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="resource-year">
-            <div class="resource-year__toggler r-head">
-                Select Year <i class="fas fa-angle-down"></i>
-            </div>
-            <div class="resource-year__list r-list">
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="1st year" id="r-y1"><label for=r-y1>1st year</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="2nd year" id="r-y2"><label for=r-y2>2nd year</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="3rd year" id="r-y3"><label for=r-y3>3rd year</label>
-                </div>
-                <div class="resource-dep__check">
-                    <input type="checkbox" name="4th year" id="r-y4"><label for=r-y4>4th year</label>
+                <div class="resource-dep__list r-list">
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="dep" id="r-cs" value="Computer Science and Engineering"><label
+                            for="r-cs">CSE</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="dep" id="r-it" value="Information Technology"><label
+                            for="r-it">IT</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="dep" id="r-ece"
+                            value="Electronics and Communication Engineering"><label for="r-ece">ECE</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="dep" id="r-ee" value="Electrical Engineering"><label
+                            for="r-ee">EE</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="dep" id="r-me" value="Mechanical Engineering"><label for="">ME</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="dep" id="r-civil" value="Civil Engineering"><label
+                            for="r-civil">Civil</label>
+                    </div>
                 </div>
             </div>
-        </div>
-        <br>
-        <div class="resource-resource">
-            <div class="resource-resource__toggler r-head">
-                Select Resource <i class="fas fa-angle-down"></i>
+            <br>
+            <div class="resource-year">
+                <div class="resource-year__toggler r-head">
+                    Select Year <i class="fas fa-angle-down"></i>
+                </div>
+                <div class="resource-year__list r-list">
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="year" id="r-y1" value="1st Year"><label for=r-y1>1st year</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="year" id="r-y2" value="2nd Year"><label for=r-y2>2nd year</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="year" id="r-y3" value="3rd Year"><label for=r-y3>3rd year</label>
+                    </div>
+                    <div class="resource-dep__check">
+                        <input type="checkbox" name="year" id="r-y4" value="4th Year"><label for=r-y4>4th year</label>
+                    </div>
+                </div>
             </div>
-            <div class="resource-resource__list r-list">
-                <div class="resource-resource__check">
-                    <input type="checkbox" name="Assignment" id="r-assign"><label for="r-assign">Assignment</label>
+            <br>
+            <div class="resource-resource">
+                <div class="resource-resource__toggler r-head">
+                    Select Resource <i class="fas fa-angle-down"></i>
                 </div>
-                <div class="resource-resource__check">
-                    <input type="checkbox" name="Notes" id="r-note"><label for="r-note">Notes</label>
-                </div>
-                <div class="resource-resource__check">
-                    <input type="checkbox" name="Previous year papers" id="r-prev"><label for="r-prev">Previous year
-                        papers</label>
-                </div>
-                <div class="resource-resource__check">
-                    <input type="checkbox" name="Books" id="r-books"><label for="r-books">Books</label>
+                <div class="resource-resource__list r-list">
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="type" id="r-assign" value="Assignment"><label
+                            for="r-assign">Assignment</label>
+                    </div>
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="type" id="r-note" value="Notes"><label for="r-note">Notes</label>
+                    </div>
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="type" id="r-prev" value="Question papers"><label for="r-prev">Previous
+                            year papers</label>
+                    </div>
+                    <div class="resource-resource__check">
+                        <input type="checkbox" name="type" id="r-books" value="Books"><label for="r-books">Books</label>
+                    </div>
                 </div>
             </div>
-        </div>
+            <div class="card-body">
+                <center><button type="submit" class="btn btn-link"><b>Apply</b></a></center>
+            </div>
+        </form>
     </div>
-
     <div class="resource-mid">
         {% for res in teacher %}
         <div class="resource-card">
