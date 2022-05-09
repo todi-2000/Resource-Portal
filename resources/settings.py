@@ -25,7 +25,7 @@ SECRET_KEY = 'hjf!o&o6v%7-9i+imf(n(5%1wh_a2)72uty2=x3l44c!n2s3d('
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['mmil-resource-portal.herokuapp.com','127.0.0.1']
 
 
 # Application definition
