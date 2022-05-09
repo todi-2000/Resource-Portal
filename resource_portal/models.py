@@ -3,21 +3,21 @@ from django.contrib.auth.models import User
 from accounts.models import *
 # Create your models here.
 Branch = [('None', 'None'),
-            ('CS', 'Computer Science and Engineering'),
-            ('IT', 'Information Technology'),
-             ('EC', 'Electronics and Communication Engineering'),
-             ('ME', 'Mechanical Engineering'),
-             ('EEE', 'Electrical & Electronics Engineering'),
-             ('EE', 'Electrical Engineering'),
-             ('CE', 'Civil Engineering'),
+            ('Computer Science and Engineering', 'Computer Science and Engineering'),
+            ('Information Technology', 'Information Technology'),
+             ('Electronics and Communication Engineering', 'Electronics and Communication Engineering'),
+             ('Mechanical Engineering', 'Mechanical Engineering'),
+             ('Electrical & Electronics Engineering', 'Electrical & Electronics Engineering'),
+             ('Electrical Engineering', 'Electrical Engineering'),
+             ('Civil Engineering', 'Civil Engineering'),
 ]
 
 Year=[
     ('None','None'),
-    ('1st','1st Year'),
-    ('2nd','2nd Year'),
-    ('3rd','3rd Year'),
-    ('4th','4th Year'),
+    ('1st Year','1st Year'),
+    ('2nd Year','2nd Year'),
+    ('3rd Year','3rd Year'),
+    ('4th Year','4th Year'),
 ]
 
 Type=[
