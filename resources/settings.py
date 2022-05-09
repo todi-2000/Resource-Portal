@@ -38,10 +38,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'django_cleanup.apps.CleanupConfig',
-    
+    'storages',
     #Apps
     'accounts',
     'resource_portal',
+    
 ]
 
 
@@ -123,19 +124,52 @@ USE_I18N = True
 
 USE_L10N = True
 
-USE_TZ = True
+# USE_TZ = True
+
+# AWS S3 settings --start--
+AWS_ACCESS_KEY_ID='AKIAZSCVC52H5AEMZOOC'
+
+AWS_SECRET_ACCESS_KEY='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'
+
+AWS_STORAGE_BUCKET_NAME='resource-portal-bucket'
+
+AWS_S3_CUSTOM_DOMAIN =f'{AWS_STORAGE_BUCKET_NAME}.s3.amazonaws.com' 
+
+AWS_DEFAULT_ACL='public-read'
+
+AWS_S3_OBJECT_PARAMETERS={
+    'CacheControl': 'max-age=86400',
+}
+
+AWS_LOCATION='static'
+
+AWS_QUERYSTRING_AUTH=False
+
+AWS_HEADERS={
+    'Access-Control-Allow-Origin':'*',
+}
 
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
-STATIC_URL = '/static/'
+DEFAULT_FILE_STORAGE='storages.backends.s3boto3.S3Boto3Storage'
+# STATICFILES_STORAGE = 'storages.backends.s3boto3.S3StaticStorage'
+STATICFILES_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "static"),
 ]
+STATIC_URL= f'https://{AWS_S3_CUSTOM_DOMAIN}/static/'
 
-MEDIA_URL = '/media/'
+MEDIA_URL= f'https://{AWS_S3_CUSTOM_DOMAIN}/media/'
+
+#AWS s3 settins --end--
+
+
+
+# MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+# django_heroku.settings(locals())

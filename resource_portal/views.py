@@ -119,11 +119,8 @@ def books(request):
     return render(request,'resource_portal/books.html',context)
 
 def teachers(request):
-    resources=Resource.objects.all()
-    resource=[]
-    for res in resources:
-        if res.Teacher!=None:
-            resource.append(res)
+    resource=Resource.objects.all()
+
     filter_dep = request.GET.getlist('dep')
     filter_year = request.GET.getlist('year')
     filter_type = request.GET.getlist('type')
